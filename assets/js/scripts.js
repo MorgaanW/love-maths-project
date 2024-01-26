@@ -37,8 +37,23 @@ function checkAnswer() {
 
 }
 
-function calculateCorrectAnswer() {
+/**
+ * gets the numbers (operands) and the operator
+ */
 
+
+
+function calculateCorrectAnswer() {
+    let operand1 = parseInt(document.getElementById(`operand1`).innerText)
+    let operand2 = parseInt(document.getElementById(`operand2`).innerText)
+    let operator = document.getElementById("operator").innerText;
+
+    if(operator === "+") {
+        return [operand1 + operand2, "addition"]
+    } else {
+        alert(`Unimplemented operator ${operator}`)
+        throw `Unimplemented operator ${operator}. Aborting!`;
+    }
 }
 
 function incrementScore() {
